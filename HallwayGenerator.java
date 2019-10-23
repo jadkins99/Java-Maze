@@ -1,4 +1,4 @@
-public class HallwayGenerator implements MazeGenerator{
+public class HallwayGenerator extends MazeGenerator{
   public void generate(Maze m){
     // STUBBED
   }
