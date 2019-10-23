@@ -21,7 +21,7 @@ public class MazeApplication extends Application{
         primaryStage.setScene(new Scene(root, 1200, 800, Color.WHITE));
         primaryStage.show();
 
-	displayTheMaze();
+	    displayTheMaze();
     }
 
     //Here is where the maze is created

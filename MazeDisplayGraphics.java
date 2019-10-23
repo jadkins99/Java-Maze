@@ -9,16 +9,16 @@ import javafx.scene.shape.ArcType;
 public class MazeDisplayGraphics{
     public static int SIZE = 600;
     public static int MARGIN = 20;
-    public static double LINE_WIDE = 4;
+    public static double LINE_WIDE = 5;
     static double BOX_WIDE;
     static double BOX_TALL;
-    static int FONT_SIZE;
+    static int FONT_SIZE = 14;
     static GraphicsContext gc;
 
     static void display(RectMaze the_maze, Canvas can){
 	int max_x = the_maze.getMaxX();
 	int max_y = the_maze.getMaxY();
-        int max_dim = 0;
+    int max_dim = 0;
 	gc = can.getGraphicsContext2D();
 
 	if (max_x > max_y){
@@ -37,7 +37,6 @@ public class MazeDisplayGraphics{
 	for(int i=0;i<max_x; i++){
 	    for(int j=0; j<max_y; j++){
 		displayLoc(the_maze, i,j, MARGIN+BOX_WIDE*i, MARGIN+BOX_TALL*j);
-
 	    }
 	}
 
@@ -45,7 +44,7 @@ public class MazeDisplayGraphics{
 
     static void displayLoc(RectMaze the_maze, int i, int j, double x, double y){
 	List<DirType> dirs = the_maze.getDirections(i,j);
-
+	Thing thingOnSquare = the_maze.getThing(i,j);
 	gc.setFill(Color.WHITE);
 	gc.setStroke(Color.BLACK);
 	gc.setTextAlign(TextAlignment.LEFT);
@@ -68,6 +67,12 @@ public class MazeDisplayGraphics{
 	    if(!dirs.contains(DirType.East)){
 		gc.strokeLine(x+BOX_WIDE,y,x+BOX_WIDE,y+BOX_TALL);
 	    }
+
+	    if(thingOnSquare != null) {
+	    	System.out.println("Thing found");
+			gc.setFill(Color.BLACK);
+			gc.fillRect(x+10,y+10,35,35);
+		}
 	}
     }
 
