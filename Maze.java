@@ -93,13 +93,13 @@ public class Maze {
     }*/
 
     public void init() {
-        generator.generate(maze)
+        generator.generate(this);
 
         Thing crazyMonster = new MazeMonster(0,0);
         crazyMonster.setFindingAlgorithm(new RandomPathFinder());
         crazyMonster.setMaze(this);
         maze[0][0].setThing(crazyMonster);
-        
+
     }
 
     public void genRandMaze(){
