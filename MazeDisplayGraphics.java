@@ -52,6 +52,11 @@ public class MazeDisplayGraphics{
 
 	if(dirs != null){
 
+		if( i == the_maze.getMaxX()-1 && j == the_maze.getMaxY()-1) {
+			gc.setFill(Color.BLUE);
+			gc.fillRect(x+10,y+10,35,35);
+		}
+
 	    if(!dirs.contains(DirType.North)){
 		gc.strokeLine(x,y,x+BOX_WIDE,y);
 	    }

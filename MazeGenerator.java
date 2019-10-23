@@ -1,4 +1,4 @@
 public interface MazeGenerator{
-  public void generate(Maze m;);
+  public void generate(Maze m);
 
 }
