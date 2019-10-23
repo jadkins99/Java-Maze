@@ -102,6 +102,12 @@ public class Maze {
                     }
                     rand = Math.random();
                 }
+
+                if(i == 0) walls[0] = true;
+                if(i == numRows-1) walls[3] = true;
+                if(j == 0) walls[2] = true;
+                if(j == numColumns-1) walls[1] = true;
+
                 this.maze[i][j] = new Square(walls[0],walls[1],walls[2],walls[3],i,j);
             }
         }

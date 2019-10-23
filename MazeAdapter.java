@@ -7,23 +7,23 @@ public class MazeAdapter implements RectMaze{
     
     public MazeAdapter(){
         maze = new Maze(10, 10, newMaze);
-        maze.initStatic();
+        maze.init();
     }
 
     public List<DirType> getDirections(int x, int y){
         List<DirType> lst = new ArrayList<DirType>();
         Square[][] mazeArray = maze.getMaze();
         
-	if (mazeArray[y][x].n == true){
+	if (mazeArray[y][x].n == false){
 	    lst.add(DirType.North);
 	}
-	if (mazeArray[y][x].s == true){
+	if (mazeArray[y][x].s == false){
 	    lst.add(DirType.South);
 	}
-	if (mazeArray[y][x].w == true){
+	if (mazeArray[y][x].w == false){
 	    lst.add(DirType.West);
 	}
-	if (mazeArray[y][x].e == true){
+	if (mazeArray[y][x].e == false){
 	    lst.add(DirType.East);
 	}
 	
