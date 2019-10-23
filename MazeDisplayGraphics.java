@@ -33,7 +33,7 @@ public class MazeDisplayGraphics{
 	gc.setLineWidth(LINE_WIDE);
 
 	gc.clearRect(0,0,SIZE,SIZE);
-
+	System.out.println("drawing again");
 	for(int i=0;i<max_x; i++){
 	    for(int j=0; j<max_y; j++){
 		displayLoc(the_maze, i,j, MARGIN+BOX_WIDE*i, MARGIN+BOX_TALL*j);
@@ -74,7 +74,7 @@ public class MazeDisplayGraphics{
 	    }
 
 	    if(thingOnSquare != null) {
-	    	System.out.println("Thing found");
+	    	System.out.println("Found something." + i + " and " + j);
 			gc.setFill(Color.BLACK);
 			gc.fillRect(x+10,y+10,35,35);
 		}

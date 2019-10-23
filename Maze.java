@@ -11,7 +11,6 @@ public class Maze {
         this.numRows = numRows;
         this.numColumns = numColumns;
         this.maze = maze;
-        System.out.println("creating new maze");
     }
 
     public int getRows(){
@@ -114,9 +113,12 @@ public class Maze {
                 this.maze[i][j] = new Square(walls[0],walls[1],walls[2],walls[3],i,j);
             }
         }
+
         Thing crazyMonster = new MazeMonster(0,0);
         crazyMonster.setFindingAlgorithm(new RandomPathFinder());
+        crazyMonster.setMaze(this);
         maze[0][0].setThing(crazyMonster);
+        
     }
 
     public Square[][] getMaze(){

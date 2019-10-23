@@ -1,7 +1,7 @@
 public class Square{
-  Thing t;
-  boolean n,e,w,s;
-  int locationX, locationY;
+  public Thing t;
+  public boolean n,e,w,s;
+  public int locationX, locationY;
 
   public Square(boolean n,boolean e,boolean w, boolean s,int locationX, int locationY){
     this.n = n;
@@ -12,8 +12,8 @@ public class Square{
     this.locationY = locationY;
     t = null;
   }
-  public Thing contains(){
-    if(t!= null) return t.getType();
+  public String contains(){
+    if(t != null) return t.getType();
     else return null;
   }
 
@@ -22,6 +22,9 @@ public class Square{
   }
   public void setThing(Thing t){
       this.t = t;
+  }
+  public void removeThing() {
+      this.t = null;
   }
   public void setWall(char wallToSet,boolean wallOrNoWall){
     if(wallToSet == 'n') n = wallOrNoWall;

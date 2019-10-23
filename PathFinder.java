@@ -3,6 +3,6 @@ import java.util.*;
 // Each "Thing" may have a PathFinder or not.
 public interface PathFinder{
 
-    public LinkedList<DirType> findPath();
+    public LinkedList<DirType> findPath(Maze maze);
     
 }

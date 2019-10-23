@@ -14,6 +14,10 @@ public class MazeAdapter implements RectMaze{
         return mazeArray[y][x].getThing();
     }
 
+    public Maze getMaze() {
+        return maze;
+    }
+
     public List<DirType> getDirections(int x, int y){
         List<DirType> lst = new ArrayList<DirType>();
         Square[][] mazeArray = maze.getMaze();
