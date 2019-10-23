@@ -1,5 +1,4 @@
 import java.util.*;
-//import
 
 class RandomPathFinder implements PathFinder {
 
