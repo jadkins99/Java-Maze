@@ -14,7 +14,7 @@ public class HulkSmashGenerator implements MazeGenerator{
         y--;
         m.maze[y][x].s = false;
       }
-      if (direction == 1 && y++ < m.getColumns()) {
+      if (direction == 1 && y++ < m.getColumns()-1) {
         m.maze[y][x].s = false;
         y++;
         m.maze[y][x].n = false;
@@ -24,7 +24,7 @@ public class HulkSmashGenerator implements MazeGenerator{
         x--;
         m.maze[y][x].e = false;
       }
-      if (direction == 3 && x++ < m.getRows()) {
+      if (direction == 3 && x++ < m.getRows()-1) {
         m.maze[y][x].e = false;
         x++;
         m.maze[y][x].w = false;
