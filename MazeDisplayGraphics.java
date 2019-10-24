@@ -24,7 +24,7 @@ public class MazeDisplayGraphics{
 	    int max_dim = 0;
 	    DirType dir;
 		gc = can.getGraphicsContext2D();
-		double x = 50,y = 50;
+		double x = 45,y = 50;
 		ListIterator<DirType> iterator = path.listIterator();
 		gc.setStroke(Color.YELLOW);
         while( iterator.hasNext() ) {
