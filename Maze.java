@@ -99,10 +99,10 @@ public class Maze {
         crazyMonster.setFindingAlgorithm(new RandomPathFinder());
         crazyMonster.setMaze(this);
         maze[0][0].setThing(crazyMonster);
-
+        
     }
 
-    public void genRandMaze(){
+    public void genRandMaze() {
         double rand = Math.random();
         boolean[] walls = new boolean[4];
         for(int i=0; i < numRows; i++) {

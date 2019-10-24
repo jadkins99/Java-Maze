@@ -2,6 +2,7 @@ public class Square{
   public Thing t;
   public boolean n,e,w,s;
   public int locationX, locationY;
+  public boolean squareVisited;
 
   public Square(boolean n,boolean e,boolean w, boolean s,int locationX, int locationY){
     this.n = n;
@@ -11,6 +12,7 @@ public class Square{
     this.locationX = locationX;
     this.locationY = locationY;
     t = null;
+    squareVisited = false;
   }
   public String contains(){
     if(t != null) return t.getType();

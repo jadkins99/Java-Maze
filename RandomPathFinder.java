@@ -39,12 +39,10 @@ class RandomPathFinder implements PathFinder {
 		}
 
 		if(finish == true) {
-			System.out.println("SOLUTION FOUND");
+			return solutionList;
 		} else {
-			System.out.println("NO SOLUTION FOUND");
+			return false;
 		}
-
-		return solutionList;
 
 
 	}
