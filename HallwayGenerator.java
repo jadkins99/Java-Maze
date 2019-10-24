@@ -9,25 +9,25 @@ public class HulkSmashGenerator implements MazeGenerator{
     Random r = new Random();
     while (x != m.getRows()-1 && y != m.getColumns()-1) {
       int direction = r.nextInt(4);
-      if (direction == 0) {
-        m[y][x].n = false;
+      if (direction == 0 && y-- > -1) {
+        m.maze[y][x].n = false;
         y--;
-        m[y][x].s = false;
+        m.maze[y][x].s = false;
       }
-      if (direction == 1) {
-        m[y][x].s = false;
+      if (direction == 1 && y++ < m.getColumns()) {
+        m.maze[y][x].s = false;
         y++;
-        m[y][x].n = false;
+        m.maze[y][x].n = false;
       }
-      if (direction == 2) {
-        m[y][x].w = false;
+      if (direction == 2 && x-- > -1) {
+        m.maze[y][x].w = false;
         x--;
-        m[y][x].e = false;
+        m.maze[y][x].e = false;
       }
-      if (direction == 3) {
-        m[y][x].e = false;
+      if (direction == 3 && x++ < m.getRows()) {
+        m.maze[y][x].e = false;
         x++;
-        m[y][x].w = false;
+        m.maze[y][x].w = false;
       }
     }
   }
