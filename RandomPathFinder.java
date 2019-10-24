@@ -41,7 +41,7 @@ class RandomPathFinder implements PathFinder {
 		if(finish == true) {
 			return solutionList;
 		} else {
-			return false;
+			return new LinkedList<DirType>();
 		}
 
 

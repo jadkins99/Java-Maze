@@ -57,9 +57,10 @@ public class MazeApplication extends Application{
         while( iterator.hasNext() ) {
             crazyMonster.move(iterator.next());
             System.out.println("moved");
-            MazeDisplayGraphics.display(the_maze, maze_canvas);
-            
+            MazeDisplayGraphics.display(the_maze, maze_canvas);            
         }
+
+        MazeDisplayGraphics.displayPath(the_maze, maze_canvas, path);  
     }
 
 }

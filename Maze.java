@@ -93,8 +93,8 @@ public class Maze {
     }*/
 
     public void init() {
-        generator.generate(this);
-
+        //generator.generate(this);
+        genRandMaze();
         Thing crazyMonster = new MazeMonster(0,0);
         crazyMonster.setFindingAlgorithm(new RandomPathFinder());
         crazyMonster.setMaze(this);
@@ -123,6 +123,24 @@ public class Maze {
                 this.maze[i][j] = new Square(walls[0],walls[1],walls[2],walls[3],i,j);
             }
         }
+        for(int i=0; i < numRows; i++) {
+            for(int j=0; j < numColumns; j++) {
+                if( j != 0 && this.maze[i][j-1].e == true) {
+                    this.maze[i][j].w = true;
+                }
+                if( i != 0 && this.maze[i-1][j].s == true) {
+                    this.maze[i][j].n = true;
+                }
+                if( i != numRows-1 && this.maze[i+1][j].n == true) {
+                    this.maze[i][j].s = true;
+                }
+                if( j != numColumns-1 && this.maze[i][j+1].w == true) {
+                    this.maze[i][j].e = true;
+                }
+
+            }
+        }
+
     }
 
     public Square[][] getMaze(){
