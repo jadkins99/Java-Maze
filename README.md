@@ -5,11 +5,15 @@ A maze implementation in Java. Created by Atalay Kutlay, Timon Braun, Tyrell Dan
 
 Creating approaches :
 	- BFSGenerator (Jacob Adkinds)
+
 	- HallwayGenerator (Timon Braun)
+
 
 Solving approaches :
 	- RandomPathFinder (Atalay Kutlay)
+
 	- StayRightPathFinder (Tyrell Daniels)
+	
 
 
 
