@@ -11,6 +11,7 @@ public class Maze {
         this.numRows = numRows;
         this.numColumns = numColumns;
         this.maze = maze;
+        this.generator = new BFSGenerator();
     }
 
     public int getRows(){
@@ -93,13 +94,13 @@ public class Maze {
     }*/
 
     public void init() {
-        //generator.generate(this);
-        genRandMaze();
+      //  genRandMaze();
+        generator.generate(this);
         Thing crazyMonster = new MazeMonster(0,0);
         crazyMonster.setFindingAlgorithm(new RandomPathFinder());
         crazyMonster.setMaze(this);
         maze[0][0].setThing(crazyMonster);
-        
+
     }
 
     public void genRandMaze() {
@@ -108,7 +109,7 @@ public class Maze {
         for(int i=0; i < numRows; i++) {
             for(int j=0; j < numColumns; j++) {
                 for(int a = 0; a<4; a++) {
-                    if(rand < 0.1) {
+                    if(rand < 0.2) {
                         walls[a] = true;
                     } else {
                         walls[a] = false;
@@ -123,6 +124,9 @@ public class Maze {
                 this.maze[i][j] = new Square(walls[0],walls[1],walls[2],walls[3],i,j);
             }
         }
+        this.maze[0][0].w = false;
+        this.maze[this.getRows()-1][this.getColumns()-1].e = false;
+
         for(int i=0; i < numRows; i++) {
             for(int j=0; j < numColumns; j++) {
                 if( j != 0 && this.maze[i][j-1].e == true) {

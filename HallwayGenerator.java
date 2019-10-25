@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class HulkSmashGenerator implements MazeGenerator{
+public class HallwayGenerator implements MazeGenerator{
   public void generate(Maze m){
     int x = 0;
     int y = 0;

@@ -15,14 +15,14 @@ import java.util.concurrent.TimeUnit;
 public class MazeApplication extends Application{
     RectMaze the_maze;
     Canvas maze_canvas;
-    
+
     //The start function just sets up the main window for the application
     //We will discuss JavaFx later in the term
     public void start(Stage primaryStage){
         primaryStage.setTitle("A Maze");
         Group root = new Group();
         maze_canvas = new Canvas(1200, 800);
- 
+
         root.getChildren().add(maze_canvas);
         Scene mazeScene = new Scene(root, 1200, 800, Color.WHITE);
         primaryStage.setScene(mazeScene);
@@ -42,7 +42,7 @@ public class MazeApplication extends Application{
     void displayTheMaze() {
     	the_maze = new MazeAdapter();
     	MazeDisplayGraphics.display(the_maze, maze_canvas);
-                
+
     }
 
     void animateSolution() {
@@ -57,11 +57,10 @@ public class MazeApplication extends Application{
         while( iterator.hasNext() ) {
             crazyMonster.move(iterator.next());
             System.out.println("moved");
-            MazeDisplayGraphics.display(the_maze, maze_canvas);            
+            MazeDisplayGraphics.display(the_maze, maze_canvas);
         }
 
-        MazeDisplayGraphics.displayPath(the_maze, maze_canvas, path);  
+        MazeDisplayGraphics.displayPath(the_maze, maze_canvas, path);
     }
 
 }
-	
