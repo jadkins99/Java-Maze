@@ -22,7 +22,7 @@ public class Maze {
         return this.numColumns;
     }
 
-    /*public void initStatic(){
+    public void initStatic(){
         boolean[] walls = new boolean[4];
 
         for(int i=0; i < numRows; i++) {
@@ -91,7 +91,7 @@ public class Maze {
         this.maze[8][9].setWall('s', setTo); this.maze[8][9].setWall('n', setTo);
 
         this.maze[9][9].setWall('n', setTo);
-    }*/
+    }
 
     public void init() {
       //  genRandMaze();
@@ -109,7 +109,7 @@ public class Maze {
         for(int i=0; i < numRows; i++) {
             for(int j=0; j < numColumns; j++) {
                 for(int a = 0; a<4; a++) {
-                    if(rand < 0.2) {
+                    if(rand < 0.5) {
                         walls[a] = true;
                     } else {
                         walls[a] = false;
@@ -121,7 +121,7 @@ public class Maze {
                 if(i == numRows-1) walls[3] = true;
                 if(j == 0) walls[2] = true;
                 if(j == numColumns-1) walls[1] = true;
-                this.maze[i][j] = new Square(walls[0],walls[1],walls[2],walls[3],i,j);
+                this.maze[i][j] = new Square(walls[0],walls[1],walls[2],walls[3],j,i);
             }
         }
         this.maze[0][0].w = false;
