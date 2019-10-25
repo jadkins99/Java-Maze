@@ -1,7 +1,9 @@
 # Java-Maze
 ## Object Oriented Design - Fall 2019
 
-A maze implementation in Java. Created by Atalay Kutlay, Timon Braun, Tyrell Daniels, and Jacob Adkinds. It includes two approaches to create a maze and two approaches to solve a maze. 
+A maze program in Java. Created by Atalay Kutlay, Timon Braun, Tyrell Daniels, and Jacob Adkinds. It includes two approaches to create a maze and two approaches to solve a maze. 
+
+![Screenshot](assets/javamaze.png)
 
 Creating approaches :
 - BFSGenerator (Jacob Adkinds)
@@ -12,25 +14,37 @@ Solving approaches :
 - RandomPathFinder (Atalay Kutlay)
 - StayRightPathFinder (Tyrell Daniels)
 	
+You can find details about the approaches in the documentation below.
 
 
-
-![Screenshot](assets/javamaze.png)
 
 
 # Documentation
-### Classes : 
 
-- BFSGenerator
-- DFSGenerator
+## BFSGenerator
+
+BFSGenerator is a maze generator class for our program. The class implements the MazeGenerator interface. 
+
+Methods :
+
+	- generate(Maze m) : This method takes a maze and generates a solveble maze. It creates a random maze first, and then tests if the maze is solveble using a Breadth-first search to find the finishing point from the starting point.
+
 - DirType
 - HallwayGenerator
 - Maze
 - MazeAdapter
 - MazeApplication
 - MazeDisplayGraphics
-- MazeGenerator
-- MazeMonster
+
+## MazeGenerator
+
+MazeGenerator is an interface for the maze generator approaches.
+
+Methods : 
+
+- generate(Maze m)
+
+## MazeMonster
 - PathFinder
 - RandomPathFinder
 - RectMaze
