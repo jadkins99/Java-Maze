@@ -27,7 +27,7 @@ BFSGenerator is a maze generator class for our program. The class implements the
 
 Methods :
 
-	- generate(Maze m) : This method takes a maze and generates a solveble maze. It creates a random maze first, and then tests if the maze is solveble using a Breadth-first search to find the finishing point from the starting point.
+- generate(Maze m) : This method takes a maze and generates a solveble maze. It creates a random maze first, and then tests if the maze is solveble using a Breadth-first search to find the finishing point from the starting point.
 
 ## HallwayGenerator
 ## Maze
