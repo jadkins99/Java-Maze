@@ -29,12 +29,11 @@ Methods :
 
 	- generate(Maze m) : This method takes a maze and generates a solveble maze. It creates a random maze first, and then tests if the maze is solveble using a Breadth-first search to find the finishing point from the starting point.
 
-- DirType
-- HallwayGenerator
-- Maze
-- MazeAdapter
-- MazeApplication
-- MazeDisplayGraphics
+## HallwayGenerator
+## Maze
+## MazeAdapter
+## MazeApplication
+## MazeDisplayGraphics
 
 ## MazeGenerator
 
@@ -45,8 +44,8 @@ Methods :
 - generate(Maze m)
 
 ## MazeMonster
-- PathFinder
-- RandomPathFinder
-- RectMaze
-- Square
-- Thing
+## PathFinder
+## RandomPathFinder
+## RectMaze
+## Square
+## Thing
