@@ -1,12 +1,12 @@
 # Java-Maze
 ## Object Oriented Design - Fall 2019
 
-A maze program in Java. Created by Atalay Kutlay, Timon Braun, Tyrell Daniels, and Jacob Adkinds. It includes two approaches to create a maze and two approaches to solve a maze. 
+A maze program in Java. Created by Atalay Kutlay, Timon Braun, Tyrell Daniels, and Jacob Adkins. It includes two approaches to create a maze and two approaches to solve a maze. 
 
 ![Screenshot](assets/javamaze.gif)
 
 Creating approaches :
-- BFSGenerator (Jacob Adkinds)
+- BFSGenerator (Jacob Adkins)
 - HallwayGenerator (Timon Braun)
 
 
