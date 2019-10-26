@@ -21,10 +21,10 @@ public class MazeApplication extends Application{
     public void start(Stage primaryStage){
         primaryStage.setTitle("A Maze");
         Group root = new Group();
-        maze_canvas = new Canvas(1200, 800);
+        maze_canvas = new Canvas(600, 600);
 
         root.getChildren().add(maze_canvas);
-        Scene mazeScene = new Scene(root, 1200, 800, Color.WHITE);
+        Scene mazeScene = new Scene(root, 600, 600, Color.WHITE);
         primaryStage.setScene(mazeScene);
         primaryStage.show();
         mazeScene.addEventFilter(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
@@ -46,6 +46,7 @@ public class MazeApplication extends Application{
     }
 
     void animateSolution() {
+        System.out.println("Solution starts");
         DirType dir;
         int x = 0, y = 0;
         Thing crazyMonster = the_maze.getThing(0,0);
