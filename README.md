@@ -17,9 +17,6 @@ Solving approaches :
 	
 You can find details about the approaches in the documentation below.
 
-
-
-
 # Documentation
 
 ## BFSGenerator
@@ -31,15 +28,6 @@ Methods :
 - generate(Maze m) : This method takes a maze and generates a solveble maze. It creates a random maze first, and then tests if the maze is solveable
 using a Breadth-first search to find the finishing point from the starting point.
 
-## HallwayGenerator
-## Maze
-## MazeAdapter
-## MazeApplication
-## MazeDisplayGraphics
-
-
-
-
 ## MazeGenerator
 
 MazeGenerator is an interface for the maze generator approaches.
@@ -47,16 +35,6 @@ MazeGenerator is an interface for the maze generator approaches.
 Methods : 
 
 - generate(Maze m)
-
-## MazeMonster
-## PathFinder
-## RandomPathFinder
-## RectMaze
-## Square
-## Thing
-
-
-
 
 ## PathFinder
 
