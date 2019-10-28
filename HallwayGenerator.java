@@ -7,27 +7,24 @@ public class HallwayGenerator implements MazeGenerator{
 
     m.genRandMaze();
     Random r = new Random();
-    while (x != m.getRows()-1 && y != m.getColumns()-1) {
-      int direction = r.nextInt(4);
-      if (direction == 0 && y-- > -1) {
-        m.maze[y][x].n = false;
-        y--;
-        m.maze[y][x].s = false;
+    while (x != m.getRows()-1 || y != m.getColumns()-1) {
+      int direction = r.nextInt(2);
+      if (direction == 0 && x < m.getColumns()) {
+        if( x != m.getColumns() -1 ) {
+        m.maze[y][x].e = false;
+        
+          m.maze[y][x+1].w = false;
+          x++;
+        }
+        
       }
-      if (direction == 1 && y++ < m.getColumns()-1) {
-        m.maze[y][x].s = false;
+      if (direction == 1 && y < m.getRows()) {
+        if ( y != m.getRows() -1) {
+        m.maze[y][x].s = false;        
+        m.maze[y+1][x].n = false;
         y++;
-        m.maze[y][x].n = false;
-      }
-      if (direction == 2 && x-- > -1) {
-        m.maze[y][x].w = false;
-        x--;
-        m.maze[y][x].e = false;
-      }
-      if (direction == 3 && x++ < m.getRows()-1) {
-        m.maze[y][x].e = false;
-        x++;
-        m.maze[y][x].w = false;
+        }
+        
       }
     }
   }

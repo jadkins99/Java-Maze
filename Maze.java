@@ -6,6 +6,7 @@ public class Maze {
     int numColumns;
     Square[][] maze;
     MazeGenerator generator;
+    PathFinder finder;
 
     public Maze(int numRows, int numColumns, Square[][] maze) {
         this.numRows = numRows;
@@ -98,16 +99,24 @@ public class Maze {
         this.maze[9][9].setWall('n', setTo);
 
         Thing crazyMonster = new MazeMonster(0,0);
-        crazyMonster.setFindingAlgorithm(new RandomPathFinder());
+        crazyMonster.setFindingAlgorithm(new StayRightPathFinder());
         crazyMonster.setMaze(this);
         maze[0][0].setThing(crazyMonster);
+    }
+
+    public void setGenerator( MazeGenerator generator) {
+        this.generator = generator;
+    }
+
+    public void setFinder( PathFinder finder) {
+        this.finder = finder;
     }
 
     public void init() {
       //  genRandMaze();
         generator.generate(this);
         Thing crazyMonster = new MazeMonster(0,0);
-        crazyMonster.setFindingAlgorithm(new RandomPathFinder());
+        crazyMonster.setFindingAlgorithm( finder );
         crazyMonster.setMaze(this);
         maze[0][0].setThing(crazyMonster);
 
@@ -119,7 +128,7 @@ public class Maze {
         for(int i=0; i < numRows; i++) {
             for(int j=0; j < numColumns; j++) {
                 for(int a = 0; a<4; a++) {
-                    if(rand < 0.5) {
+                    if(rand < 0.4) {
                         walls[a] = true;
                     } else {
                         walls[a] = false;
@@ -134,8 +143,8 @@ public class Maze {
                 this.maze[i][j] = new Square(walls[0],walls[1],walls[2],walls[3],j,i);
             }
         }
-        this.maze[0][0].w = false;
-        this.maze[this.getRows()-1][this.getColumns()-1].e = false;
+        //this.maze[0][0].w = false;
+        //this.maze[this.getRows()-1][this.getColumns()-1].e = false;
 
         for(int i=0; i < numRows; i++) {
             for(int j=0; j < numColumns; j++) {

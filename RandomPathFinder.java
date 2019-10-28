@@ -32,10 +32,6 @@ class RandomPathFinder implements PathFinder {
 			if(x == maxX-1 && y == maxY-1) {
 				finish = true;
 			}
-			i++;
-			if(i > 500) {
-				break;
-			}
 		}
 
 		if(finish == true) {

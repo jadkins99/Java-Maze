@@ -4,8 +4,10 @@ public class MazeAdapter implements RectMaze{
     Square[][] newMaze = new Square[10][10];
     Maze maze;
 
-    public MazeAdapter(){
+    public MazeAdapter(MazeGenerator generator, PathFinder finder){
         maze = new Maze(10, 10, newMaze);
+        maze.setGenerator( generator );
+        maze.setFinder( finder );
         maze.init();
         System.out.println("Init completed");
     }

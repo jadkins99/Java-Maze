@@ -17,7 +17,15 @@ public class MazeDisplayGraphics{
     static GraphicsContext gc;
     static double oldx = 0, oldy = 0;
 
-
+    static void displayStep(RectMaze the_maze, Canvas can, String text, int y) {
+    	gc = can.getGraphicsContext2D();
+    	gc.setFill(Color.RED);	
+    	gc.fillText(
+            text, 
+            600, 
+            y
+        );
+    }
     static void displayPath(RectMaze the_maze, Canvas can, LinkedList<DirType> path){
 		int max_x = the_maze.getMaxX();
 		int max_y = the_maze.getMaxY();
@@ -53,6 +61,7 @@ public class MazeDisplayGraphics{
     }
 
     static void display(RectMaze the_maze, Canvas can){
+
 		int max_x = the_maze.getMaxX();
 		int max_y = the_maze.getMaxY();
 	    int max_dim = 0;
@@ -67,6 +76,7 @@ public class MazeDisplayGraphics{
 
 		BOX_WIDE = (SIZE-2*MARGIN)/max_dim;
 		BOX_TALL = (SIZE-2*MARGIN)/max_dim;
+		
 		gc.setLineWidth(LINE_WIDE);
 		gc.clearRect(0,0,SIZE,SIZE);
 
@@ -85,7 +95,6 @@ public class MazeDisplayGraphics{
 	gc.setStroke(Color.BLACK);
 	gc.setTextAlign(TextAlignment.LEFT);
 	gc.setFont(Font.font("Helvetica", FONT_SIZE));
-
 	if(dirs != null){
 
 		if( i == the_maze.getMaxX()-1 && j == the_maze.getMaxY()-1) {
