@@ -177,6 +177,5 @@ public class Maze {
             }
             System.out.println();
         }
-
     }
 }
