@@ -6,6 +6,12 @@ two approaches to solve a maze.
 
 ![Screenshot](assets/javamaze.gif)
 
+## How To Get Started
+
+Simply clone the repository, and run "java MazeApplication" in your terminal.
+
+## Team
+
 Creating approaches :
 - BFSGenerator (Jacob Adkinds)
 - HallwayGenerator (Timon Braun)
